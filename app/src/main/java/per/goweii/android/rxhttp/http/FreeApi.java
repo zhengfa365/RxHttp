@@ -2,6 +2,7 @@ package per.goweii.android.rxhttp.http;
 
 import io.reactivex.Observable;
 import per.goweii.android.rxhttp.bean.RecommendPoetryBean;
+import per.goweii.android.rxhttp.bean.Sentenses;
 import per.goweii.android.rxhttp.bean.SinglePoetryBean;
 import per.goweii.android.rxhttp.bean.WeatherBean;
 import per.goweii.rxhttp.request.Api;
@@ -25,7 +26,9 @@ public class FreeApi extends Api {
     }
 
     public interface Config {
-        String BASE_URL = "http://api.apiopen.top/";
+//        String BASE_URL = "http://api.apiopen.top/";
+        String BASE_URL = "http://poetry.apiopen.top/";
+
 
         String BASE_URL_OTHER_NAME = "other";
         String BASE_URL_OTHER = "https://www.apiopen.top/";
@@ -42,8 +45,8 @@ public class FreeApi extends Api {
          * 随机单句诗词推荐
          */
         @Headers({Header.CACHE_ALIVE_SECOND + ":" + 10})
-        @GET("singlePoetry")
-        Observable<ResponseBean<SinglePoetryBean>> singlePoetry();
+        @GET("sentences")
+        Observable<ResponseBean<Sentenses>> singlePoetry();
 
         /**
          * 随机一首诗词推荐

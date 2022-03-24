@@ -131,6 +131,6 @@ public abstract class DefaultRequestSetting implements RequestSetting {
 
     @Override
     public boolean isDebug() {
-        return false;
+        return true;
     }
 }

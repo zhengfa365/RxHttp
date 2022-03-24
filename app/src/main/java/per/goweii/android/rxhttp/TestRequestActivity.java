@@ -17,6 +17,7 @@ import javax.net.ssl.SSLSession;
 
 import okhttp3.OkHttpClient;
 import per.goweii.android.rxhttp.bean.RecommendPoetryBean;
+import per.goweii.android.rxhttp.bean.Sentenses;
 import per.goweii.android.rxhttp.bean.SinglePoetryBean;
 import per.goweii.android.rxhttp.bean.WeatherBean;
 import per.goweii.android.rxhttp.http.FreeApi;
@@ -154,9 +155,9 @@ public class TestRequestActivity extends AppCompatActivity {
                 long cast = System.currentTimeMillis() - timeStart;
                 log("onFinish(cast=" + cast + ")");
             }
-        }).request(new RxRequest.ResultCallback<SinglePoetryBean>() {
+        }).request(new RxRequest.ResultCallback<Sentenses>() {
             @Override
-            public void onSuccess(int code, SinglePoetryBean data) {
+            public void onSuccess(int code, Sentenses data) {
                 log("onSuccess(code=" + code + ",data=" + data.toFormatJson() + ")");
             }
 
